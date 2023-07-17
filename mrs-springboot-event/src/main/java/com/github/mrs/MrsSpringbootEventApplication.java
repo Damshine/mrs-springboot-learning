@@ -1,4 +1,4 @@
-package com.github.mrs.event;
+package com.github.mrs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
