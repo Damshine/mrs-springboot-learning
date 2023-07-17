@@ -12,7 +12,7 @@ class MrsSpringbootEventApplicationTests {
     private OrderService orderService;
 
     @Test
-    void contextLoads() {
+    void buyOrderTest() {
 
         orderService.buyOrder("123456");
     }

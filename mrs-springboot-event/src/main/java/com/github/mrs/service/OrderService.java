@@ -1,5 +1,6 @@
 package com.github.mrs.service;
 
+import com.github.mrs.event.MsgEvent;
 import com.github.mrs.event.OrderProductEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +32,8 @@ public class OrderService {
         //2. 校验订单的价格(同步处理)
         applicationContext.publishEvent(new OrderProductEvent(this, orderId));
         //3. 短信处理(异步处理)
+        applicationContext.publishEvent(new MsgEvent(orderId));
+
 
 
         long end = System.currentTimeMillis();
