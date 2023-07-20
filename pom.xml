@@ -20,8 +20,11 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <packaging>pom</packaging>
+
     <modules>
         <module>mrs-springboot-event</module>
+        <module>mrs-mapstruct-learning</module>
     </modules>
 
 
