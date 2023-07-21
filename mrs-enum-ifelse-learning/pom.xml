@@ -9,32 +9,21 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.github.mrs</groupId>
-    <artifactId>mrs-springboot</artifactId>
+    <artifactId>mrs-enum-ifelse-learning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mrs-springboot-learning</name>
-    <description>mrs-springboot-learning</description>
-    <properties>
-        <spring-boot.version>2.6.6</spring-boot.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>mrs-springboot-event</module>
-        <module>mrs-mapstruct-learning</module>
-        <module>mrs-enum-ifelse-learning</module>
-    </modules>
-
-
+    <name>mrs-enum-ifelse-learning</name>
+    <description>mrs-enum-ifelse-learning</description>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -47,6 +36,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
