@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * description:
+ * description: 查询发放Controller
  * date: 2023/7/21 14:22
  * author: MR.孙
  */
