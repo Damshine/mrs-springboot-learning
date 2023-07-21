@@ -25,6 +25,8 @@
         <module>mrs-springboot-event</module>
         <module>mrs-mapstruct-learning</module>
         <module>mrs-enum-ifelse-learning</module>
+        <module>mrs-map-if-else-learning</module>
+
     </modules>
 
 
