@@ -1,6 +1,5 @@
 package com.github.mrs.exception;
 
-import com.github.mrs.enums.IResponseEnum;
 import lombok.Getter;
 
 /**
@@ -10,8 +9,6 @@ import lombok.Getter;
  */
 @Getter
 public class BaseException extends RuntimeException{
-
-    IResponseEnum responseEnum;
 
     Object[] args;
 
@@ -25,15 +22,15 @@ public class BaseException extends RuntimeException{
         super(message);
     }
 
-    public BaseException(IResponseEnum responseEnum, Object[] args, String message) {
+    public BaseException(Object[] args, String message) {
         super(message);
-        this.responseEnum = responseEnum;
+        this.message = message;
         this.args = args;
     }
 
-    public BaseException(IResponseEnum responseEnum, Object[] args, String message, Throwable cause) {
+    public BaseException(Object[] args, String message, Throwable cause) {
         super(message, cause);
-        this.responseEnum = responseEnum;
+        this.message = message;
         this.args = args;
 
     }

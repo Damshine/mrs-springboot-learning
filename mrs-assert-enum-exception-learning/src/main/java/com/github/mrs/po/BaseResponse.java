@@ -1,6 +1,6 @@
 package com.github.mrs.po;
 
-import com.github.mrs.enums.IResponseEnum;
+import com.github.mrs.asserts.Assert;
 import lombok.Data;
 
 /**
@@ -24,8 +24,8 @@ public class BaseResponse {
         this(0, "成功");
     }
 
-    public BaseResponse(IResponseEnum iResponseEnum) {
-        this(iResponseEnum.getCode(), iResponseEnum.getMessage());
+    public BaseResponse(Assert asserts) {
+        this(asserts.getCode(), asserts.getMessage());
     }
 
     public BaseResponse(int code, String message) {

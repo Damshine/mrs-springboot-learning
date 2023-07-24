@@ -1,6 +1,7 @@
 package com.github.mrs.controller;
 
-import com.github.mrs.enums.ResponseEnum;
+import com.github.mrs.asserts.Assert;
+import com.github.mrs.asserts.SysAssert;
 import com.github.mrs.po.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,13 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
 
-    @GetMapping("/test")
-    public String getData() {
+    @GetMapping("/test1")
+    public String getData1() {
         User user = null;
         // if (user == null) {
         //     throw new Exception("111111111111");
         // }
-        ResponseEnum.BAD_LICENCE_TYPE.assertNotNull(user);
+        Assert.BUSINESS_EXCEPTION.assertNotNull(user);
+        return "ok";
+    }
+
+    @GetMapping("/test2")
+    public String getData2() {
+        User user = null;
+        // if (user == null) {
+        //     throw new Exception("111111111111");
+        // }
+        SysAssert.SYSTEM_EXCEPTION.assertNotNull(user);
         return "ok";
     }
 

@@ -7,7 +7,11 @@ import com.github.mrs.exception.BaseException;
  * date: 2023/7/22 19:07
  * author: MR.孙
  */
-public interface Asserts {
+public interface IAssert {
+
+    int getCode();
+
+    String getMessage();
 
     /**
      * 创建异常
