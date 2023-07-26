@@ -28,6 +28,7 @@
         <module>mrs-map-if-else-learning</module>
         <module>mrs-assert-enum-exception-learning</module>
         <module>mrs-dynamic-log-level</module>
+        <module>mrs-cache-learning</module>
     </modules>
 
 
