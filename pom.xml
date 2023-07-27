@@ -29,6 +29,7 @@
         <module>mrs-assert-enum-exception-learning</module>
         <module>mrs-dynamic-log-level</module>
         <module>mrs-cache-learning</module>
+        <module>mrs-aop-event-log</module>
     </modules>
 
 
