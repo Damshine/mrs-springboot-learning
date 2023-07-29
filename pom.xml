@@ -31,6 +31,7 @@
         <module>mrs-cache-learning</module>
         <module>mrs-aop-event-log</module>
         <module>mrs-aop-learning</module>
+        <module>mrs-scancode-login-websocket</module>
     </modules>
 
 

@@ -1,0 +1,10 @@
+app:
+  author: mrs
+#  一般是 http / https
+server:
+  port: 8080
+type:
+  http://
+# 这是你的ip地址，公网谁都可以访问，局域网只能是自己同一个wifi端才可以访问
+host:
+  192.168.9.5

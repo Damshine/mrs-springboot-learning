@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>扫码登陆</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <style>
+    #qrImgDiv {
+      margin: 0px auto;
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="qrCodeImg-box" id="qrImgDiv"></div>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+    initQrImg();
+  });
+
+
+  function initQrImg() {
+    $("#qrImgDiv").empty();
+
+    var xmlhttp;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", getQrPath, true);
+    xmlhttp.responseType = "blob";
+    xmlhttp.onload = function () {
+
+      var uuid = this.getResponseHeader("uuid");
+
+      if (this.status == 200) {
+        var blob = this.response;
+        var img = document.createElement("img");
+        img.className = 'qrCodeBox-img';
+        img.onload = function (e) {
+          window.URL.revokeObjectURL(img.src);
+        };
+        img.src = window.URL.createObjectURL(blob);
+        document.getElementById("qrImgDiv").appendChild(img);
+
+        initWebSocket(uuid);
+      }
+    }
+    xmlhttp.send();
+  }
+
+
+  var op = "localhost";
+  var port = "8080";
+  var path = "://" + op + ":" + port;
+  var getQrPath = "http" + path + "/user/getLoginQr";
+  var wsPath = "ws" + path + "/websocket/";
+
+
+  function initWebSocket(uuid) {
+
+    if (typeof (WebSocket) == "undefined") {
+      console.log("您的浏览器不支持WebSocket");
+    } else {
+      console.log("您的浏览器支持WebSocket");
+      //实现化WebSocket对象，指定要连接的服务器地址与端口  建立连接
+      var wsPathStr = wsPath + uuid;
+      socket = new WebSocket(wsPathStr);
+      //打开事件
+      socket.onopen = function () {
+        console.log("Socket 已打开");
+        //socket.send("这是来自客户端的消息" + location.href + new Date());
+      };
+      //获得消息事件
+      socket.onmessage = function (msg) {
+        // console.log(msg)
+        var data = JSON.parse(msg.data);
+        console.log(data);
+        if (data.code === 200) {
+          //这里存放自己业务需要的数据。怎么放自己看
+          window.sessionStorage.uuid = data.uuid;
+          window.sessionStorage.userId = data.userId;
+          alert(data.message);
+          // 跳转
+          let str = "http" + path + "/success.html";
+          window.location.href = str;
+        } else if (data.code === 500) {
+          alert(data.message)
+          //如果过期了，关闭连接、重置连接、刷新二维码
+          socket.close();
+          initQrImg();
+        }
+        //发现消息进入    开始处理前端触发逻辑
+      };
+      //关闭事件
+      socket.onclose = function () {
+        console.log("Socket已关闭");
+      };
+      //发生了错误事件
+      socket.onerror = function () {
+        alert("Socket发生了错误");
+        //此时可以尝试刷新页面
+      }
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
