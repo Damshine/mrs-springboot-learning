@@ -1,4 +1,4 @@
-package com.github.mrs.po;
+package com.github.mrs.pojo;
 
 import com.github.mrs.asserts.Assert;
 import lombok.Data;

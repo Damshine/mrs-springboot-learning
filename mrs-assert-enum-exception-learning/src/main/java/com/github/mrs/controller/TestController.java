@@ -2,7 +2,7 @@ package com.github.mrs.controller;
 
 import com.github.mrs.asserts.Assert;
 import com.github.mrs.asserts.SysAssert;
-import com.github.mrs.po.User;
+import com.github.mrs.pojo.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,4 +1,4 @@
-package com.github.mrs.po;
+package com.github.mrs.pojo;
 
 public enum GenderEnum {
 

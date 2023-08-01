@@ -1,7 +1,7 @@
 package com.github.mrs.mapper;
 
-import com.github.mrs.po.Course;
-import com.github.mrs.po.Student;
+import com.github.mrs.pojo.Course;
+import com.github.mrs.pojo.Student;
 import com.github.mrs.vo.StudentVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -1,9 +1,9 @@
 package com.github.mrs;
 
 import com.github.mrs.mapper.StudentMapper;
-import com.github.mrs.po.Course;
-import com.github.mrs.po.GenderEnum;
-import com.github.mrs.po.Student;
+import com.github.mrs.pojo.Course;
+import com.github.mrs.pojo.GenderEnum;
+import com.github.mrs.pojo.Student;
 import com.github.mrs.vo.StudentVO;
 
 import java.util.ArrayList;

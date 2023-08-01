@@ -1,4 +1,4 @@
-package com.github.mrs.po;
+package com.github.mrs.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,19 +7,17 @@ import lombok.NoArgsConstructor;
 
 /**
  * description:
- * date: 2023/7/22 20:07
+ * date: 2023/7/20 15:36
  * author: MR.孙
  */
+@Data
+@AllArgsConstructor
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
-@Data
-public class User {
+public class Course {
 
-    private String name;
-
-    private String password;
-
-    private String age;
+    private String courseName;
+    private int sortNo;
+    private long id;
 
 }

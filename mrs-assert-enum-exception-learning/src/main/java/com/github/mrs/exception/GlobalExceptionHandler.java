@@ -2,7 +2,7 @@ package com.github.mrs.exception;
 
 import com.github.mrs.asserts.Assert;
 import com.github.mrs.asserts.SysAssert;
-import com.github.mrs.po.BaseResponse;
+import com.github.mrs.pojo.BaseResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
