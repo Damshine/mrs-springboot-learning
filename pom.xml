@@ -32,6 +32,7 @@
         <module>mrs-aop-event-log</module>
         <module>mrs-aop-learning</module>
         <module>mrs-scancode-login-websocket</module>
+        <module>mrs-muliti-thread-transaction</module>
     </modules>
 
 
