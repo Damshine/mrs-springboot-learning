@@ -34,6 +34,7 @@
         <module>mrs-scancode-login-websocket</module>
         <module>mrs-muliti-thread-transaction</module>
         <module>mrs-aop-redis-idempotent</module>
+        <module>mrs-ratelimiter-learning</module>
     </modules>
 
 
