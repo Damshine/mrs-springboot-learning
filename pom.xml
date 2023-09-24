@@ -37,6 +37,7 @@
         <module>mrs-ratelimiter-learning</module>
         <module>mrs-spring-boot-starter</module>
         <module>mrs-spring-boot-test</module>
+        <module>mrs-elk-demo</module>
     </modules>
 
 

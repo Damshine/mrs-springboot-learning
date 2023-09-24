@@ -1,0 +1,8 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: logstash-test
+logging:
+  level:
+    com.github.mrs: debug
