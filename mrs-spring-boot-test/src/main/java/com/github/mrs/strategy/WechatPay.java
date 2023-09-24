@@ -1,4 +1,4 @@
-package com.github.mrs.test;
+package com.github.mrs.strategy;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * author: MR.孙
  */
 @Component
-public class WechatPay implements Strategy{
+public class WechatPay implements Strategy {
     @Override
     public String pay() {
         return "使用微信支付";

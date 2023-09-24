@@ -1,6 +1,7 @@
-package com.github.mrs.test;
+package com.github.mrs.controller;
 
 
+import com.github.mrs.strategy.Strategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,9 +31,9 @@ public class TestController {
 
     @GetMapping("/test")
     public String getPayResult() {
-        // strategyMap.forEach((k, v) -> {
-        //     System.out.println(k + v);
-        // });
+        strategyMap.forEach((k, v) -> {
+            System.out.println(k + v);
+        });
         Strategy aliPay = applicationContext.getBean("aliPay", Strategy.class);
         System.out.println(aliPay.pay());
         return "123";

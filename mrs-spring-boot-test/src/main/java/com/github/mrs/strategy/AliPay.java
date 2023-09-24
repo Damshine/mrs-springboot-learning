@@ -1,4 +1,4 @@
-package com.github.mrs.test;
+package com.github.mrs.strategy;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * author: MR.孙
  */
 @Component
-public class AliPay implements Strategy{
+public class AliPay implements Strategy {
 
     @Override
     public String pay() {

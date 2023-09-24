@@ -35,6 +35,8 @@
         <module>mrs-muliti-thread-transaction</module>
         <module>mrs-aop-redis-idempotent</module>
         <module>mrs-ratelimiter-learning</module>
+        <module>mrs-spring-boot-starter</module>
+        <module>mrs-spring-boot-test</module>
     </modules>
 
 
